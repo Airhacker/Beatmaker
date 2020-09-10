@@ -6,9 +6,11 @@ class DrumKit {
 		this.currentKick = "./sounds/kick-classic.wav";
 		this.currentSnare = "./sounds/snare-acoustic01.wav";
 		this.currentHihat = "./sounds/hihat-acoustic01.wav";
+		this.currentClap = "./sounds/clap-808.wav";
 		this.kickAudio = document.querySelector(".kick-sound");
 		this.snareAudio = document.querySelector(".snare-sound");
 		this.hihatAudio = document.querySelector(".hihat-sound");
+		this.clapAudio = document.querySelector(".clap-sound");
 		this.index = 0;
 		this.bpm = 150;
 		this.isPLaying = null;
@@ -39,6 +41,10 @@ class DrumKit {
 				if (bar.classList.contains("hihat-pad")) {
 					this.hihatAudio.currentTime = 0;
 					this.hihatAudio.play();
+				}
+				if (bar.classList.contains("clap-pad")) {
+					this.clapAudio.currentTime = 0;
+					this.clapAudio.play();
 				}
 			}
 		});
@@ -81,6 +87,9 @@ class DrumKit {
 				break;
 			case "hihat-select":
 				this.hihatAudio.src = selectionValue;
+				break;
+			case "clap-select":
+				this.clapAudio.src = selectionValue;
 				break;
 		}
 	}

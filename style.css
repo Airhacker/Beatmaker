@@ -17,7 +17,8 @@ svg {
 /* General Pad Settings */
 .kick-pad,
 .snare-pad,
-.hihat-pad {
+.hihat-pad,
+.clap-pad {
 	width: 5rem;
 	height: 5rem;
 	margin: 1rem 0.5rem;
@@ -47,6 +48,13 @@ svg {
 	background: rgb(255, 149, 78);
 }
 
+.clap-pad {
+	background: rgb(143, 253, 158);
+}
+.clap-pad.active {
+	background: rgb(28, 238, 39);
+}
+
 .sequencer {
 	display: flex;
 	min-height: 100vh;
@@ -57,7 +65,8 @@ svg {
 
 .hihat-track,
 .snare-track,
-.kick-track {
+.kick-track,
+.clap-track {
 	display: flex;
 	align-items: center;
 	width: 70%;
@@ -67,7 +76,8 @@ svg {
 
 .kick,
 .snare,
-.hihat {
+.hihat,
+.clap {
 	display: flex;
 }
 
