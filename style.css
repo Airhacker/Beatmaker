@@ -18,7 +18,14 @@ svg {
 .kick-pad,
 .snare-pad,
 .hihat-pad,
-.clap-pad {
+.clap-pad,
+.cow-pad,
+.crash-pad,
+.open-pad,
+.perc-pad,
+.ride-pad,
+.shaker-pad,
+.tom-pad {
 	width: 5rem;
 	height: 5rem;
 	margin: 1rem 0.5rem;
@@ -60,6 +67,55 @@ svg {
 	background: rgb(28, 238, 39);
 }
 
+.cow-pad {
+	background: rgb(246, 253, 143);
+}
+.cow-pad.active {
+	background: rgb(251, 248, 25);
+}
+
+.crash-pad {
+	background: rgb(253, 143, 143);
+}
+.crash-pad.active {
+	background: rgb(238, 28, 28);
+}
+
+.open-pad {
+	background: rgb(143, 154, 253);
+}
+.open-pad.active {
+	background: rgb(32, 28, 238);
+}
+
+.perc-pad {
+	background: rgb(253, 143, 253);
+}
+.perc-pad.active {
+	background: rgb(238, 28, 227);
+}
+
+.ride-pad {
+	background: rgb(143, 253, 229);
+}
+.ride-pad.active {
+	background: rgb(28, 238, 210);
+}
+
+.shaker-pad {
+	background: rgb(255, 179, 93);
+}
+.shaker-pad.active {
+	background: rgb(238, 129, 28);
+}
+
+.tom-pad {
+	background: rgb(143, 253, 167);
+}
+.tom-pad.active {
+	background: rgb(28, 238, 116);
+}
+
 .sequencer {
 	display: flex;
 	min-height: 100vh;
@@ -71,7 +127,14 @@ svg {
 .hihat-track,
 .snare-track,
 .kick-track,
-.clap-track {
+.clap-track,
+.cow,
+.crash,
+.open,
+.perc,
+.ride,
+.shaker,
+.tom {
 	display: flex;
 	align-items: center;
 	width: 70%;
@@ -82,7 +145,14 @@ svg {
 .kick,
 .snare,
 .hihat,
-.clap {
+.clap,
+.cow,
+.crash,
+.open,
+.perc,
+.ride,
+.shaker,
+.tom {
 	display: flex;
 }
 
