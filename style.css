@@ -14,6 +14,12 @@ svg {
 	pointer-events: none;
 }
 
+.title-text {
+	text-align: center;
+	font-size: 3rem;
+	padding: 2rem;
+}
+
 /* General Pad Settings */
 .kick-pad,
 .snare-pad,
@@ -26,9 +32,9 @@ svg {
 .ride-pad,
 .shaker-pad,
 .tom-pad {
-	width: 5rem;
-	height: 5rem;
-	margin: 1rem 0.5rem;
+	width: 3rem;
+	height: 3rem;
+	margin: 0.5rem 0.5rem;
 	cursor: pointer;
 }
 
@@ -128,13 +134,13 @@ svg {
 .snare-track,
 .kick-track,
 .clap-track,
-.cow,
-.crash,
-.open,
-.perc,
-.ride,
-.shaker,
-.tom {
+.cow-track,
+.crash-track,
+.open-track,
+.perc-track,
+.ride-track,
+.shaker-track,
+.tom-track {
 	display: flex;
 	align-items: center;
 	width: 70%;

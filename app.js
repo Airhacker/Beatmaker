@@ -8,6 +8,12 @@ class DrumKit {
 		this.hihatAudio = document.querySelector(".hihat-sound");
 		this.clapAudio = document.querySelector(".clap-sound");
 		this.cowAudio = document.querySelector(".cow-sound");
+		this.crashAudio = document.querySelector(".crash-sound");
+		this.openAudio = document.querySelector(".open-sound");
+		this.percAudio = document.querySelector(".perc-sound");
+		this.rideAudio = document.querySelector(".ride-sound");
+		this.shakerAudio = document.querySelector(".shaker-sound");
+		this.tomAudio = document.querySelector(".tom-sound");
 		this.index = 0;
 		this.bpm = 150;
 		this.isPLaying = null;
@@ -48,6 +54,30 @@ class DrumKit {
 				if (bar.classList.contains("cow-pad")) {
 					this.cowAudio.currentTime = 0;
 					this.cowAudio.play();
+				}
+				if (bar.classList.contains("crash-pad")) {
+					this.crashAudio.currentTime = 0;
+					this.crashAudio.play();
+				}
+				if (bar.classList.contains("open-pad")) {
+					this.openAudio.currentTime = 0;
+					this.openAudio.play();
+				}
+				if (bar.classList.contains("perc-pad")) {
+					this.percAudio.currentTime = 0;
+					this.percAudio.play();
+				}
+				if (bar.classList.contains("ride-pad")) {
+					this.rideAudio.currentTime = 0;
+					this.rideAudio.play();
+				}
+				if (bar.classList.contains("shaker-pad")) {
+					this.shakerAudio.currentTime = 0;
+					this.shakerAudio.play();
+				}
+				if (bar.classList.contains("tom-pad")) {
+					this.tomAudio.currentTime = 0;
+					this.tomAudio.play();
 				}
 			}
 		});
@@ -97,6 +127,24 @@ class DrumKit {
 			case "cow-select":
 				this.cowAudio.src = selectionValue;
 				break;
+			case "crash-select":
+				this.crashAudio.src = selectionValue;
+				break;
+			case "open-select":
+				this.openAudio.src = selectionValue;
+				break;
+			case "perc-select":
+				this.percAudio.src = selectionValue;
+				break;
+			case "ride-select":
+				this.rideAudio.src = selectionValue;
+				break;
+			case "shaker-select":
+				this.shakerAudio.src = selectionValue;
+				break;
+			case "tom-select":
+				this.tomAudio.src = selectionValue;
+				break;
 		}
 	}
 
@@ -120,6 +168,24 @@ class DrumKit {
 				case "4":
 					this.cowAudio.volume = 0;
 					break;
+				case "5":
+					this.crashAudio.volume = 0;
+					break;
+				case "6":
+					this.openAudio.volume = 0;
+					break;
+				case "7":
+					this.percAudio.volume = 0;
+					break;
+				case "8":
+					this.rideAudio.volume = 0;
+					break;
+				case "9":
+					this.shakerAudio.volume = 0;
+					break;
+				case "10":
+					this.tomAudio.volume = 0;
+					break;
 			}
 		} else {
 			switch (muteIndex) {
@@ -137,6 +203,24 @@ class DrumKit {
 					break;
 				case "4":
 					this.cowAudio.volume = 0;
+					break;
+				case "5":
+					this.crashAudio.volume = 0;
+					break;
+				case "6":
+					this.openAudio.volume = 0;
+					break;
+				case "7":
+					this.percAudio.volume = 0;
+					break;
+				case "8":
+					this.rideAudio.volume = 0;
+					break;
+				case "9":
+					this.shakerAudio.volume = 0;
+					break;
+				case "10":
+					this.tomAudio.volume = 0;
 					break;
 			}
 		}
