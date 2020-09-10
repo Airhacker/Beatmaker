@@ -15,6 +15,8 @@ class DrumKit {
 		this.bpm = 150;
 		this.isPLaying = null;
 		this.selects = document.querySelectorAll("select");
+		this.muteBtns = document.querySelectorAll(".mute");
+		this.tempoSlider = document.querySelector(".tempo-slider");
 	}
 
 	activePad() {
@@ -93,6 +95,57 @@ class DrumKit {
 				break;
 		}
 	}
+
+	mute(e) {
+		const muteIndex = e.target.getAttribute("data-track");
+		e.target.classList.toggle("active");
+		if (e.target.classList.contains("active")) {
+			switch (muteIndex) {
+				case "0":
+					this.kickAudio.volume = 0;
+					break;
+				case "1":
+					this.snareAudio.volume = 0;
+					break;
+				case "2":
+					this.hihatAudio.volume = 0;
+					break;
+				case "3":
+					this.clapAudio.volume = 0;
+					break;
+			}
+		} else {
+			switch (muteIndex) {
+				case "0":
+					this.kickAudio.volume = 1;
+					break;
+				case "1":
+					this.snareAudio.volume = 1;
+					break;
+				case "2":
+					this.hihatAudio.volume = 1;
+					break;
+				case "3":
+					this.clapAudio.volume = 1;
+					break;
+			}
+		}
+	}
+
+	changeTempo(e) {
+		const tempoText = document.querySelector(".tempo-num");
+		tempoText.innerText = e.target.value;
+	}
+
+	updateTempo(e) {
+		this.bpm = e.target.value;
+		clearInterval(this.isPLaying);
+		this.isPLaying = null;
+		const playBtn = document.querySelector(".play");
+		if (playBtn.classList.contains("active")) {
+			this.start();
+		}
+	}
 }
 
 const drumKit = new DrumKit();
@@ -115,4 +168,18 @@ drumKit.selects.forEach((select) => {
 	select.addEventListener("change", function (e) {
 		drumKit.changeSound(e);
 	});
+});
+
+drumKit.muteBtns.forEach((btn) => {
+	btn.addEventListener("click", function (e) {
+		drumKit.mute(e);
+	});
+});
+
+drumKit.tempoSlider.addEventListener("input", function (e) {
+	drumKit.changeTempo(e);
+});
+
+drumKit.tempoSlider.addEventListener("change", function (e) {
+	drumKit.updateTempo(e);
 });

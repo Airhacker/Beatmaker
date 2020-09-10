@@ -25,6 +25,11 @@ svg {
 	cursor: pointer;
 }
 
+/* General Active Class Properties */
+.active {
+	border-radius: 20px;
+}
+
 /* Pad Colors */
 
 .kick-pad {
@@ -92,7 +97,7 @@ svg {
 .controls button {
 	padding: 1rem;
 	border: none;
-	background: darkgrey;
+	background: rgb(90, 90, 90);
 	color: white;
 	font-size: 1rem;
 	cursor: pointer;
@@ -106,17 +111,38 @@ svg {
 .play {
 	padding: 1rem 2rem;
 	font-size: 1.5rem;
-	background: rgb(88, 88, 88);
+	background: rgb(90, 90, 90);
 	color: white;
 	border: none;
 	cursor: pointer;
 	margin-top: 3rem;
+	transition: all 0.5s ease;
 }
 
 select {
 	padding: 1rem;
 	font-size: 1rem;
 }
+
+.tempo {
+	margin: 3rem;
+	width: 30%;
+}
+
+.tempo-slider {
+	margin: 1rem 0rem;
+	width: 100%;
+	position: relative;
+	cursor: pointer;
+}
+
+.tempo p {
+	font-size: 1.5rem;
+	margin: 2rem;
+	text-align: center;
+}
+
+/* Animations */
 
 @keyframes playTrack {
 	from {
