@@ -3,6 +3,8 @@ class DrumKit {
 	constructor() {
 		this.pads = document.querySelectorAll(".pad");
 		this.playBtn = document.querySelector(".play");
+		this.optionBtn = document.querySelector(".options");
+		this.selectBtn = document.querySelector(".sequencer");
 		this.kickAudio = document.querySelector(".kick-sound");
 		this.snareAudio = document.querySelector(".snare-sound");
 		this.hihatAudio = document.querySelector(".hihat-sound");
@@ -17,6 +19,7 @@ class DrumKit {
 		this.index = 0;
 		this.bpm = 150;
 		this.isPLaying = null;
+		this.isShowing = false;
 		this.selects = document.querySelectorAll("select");
 		this.muteBtns = document.querySelectorAll(".mute");
 		this.tempoSlider = document.querySelector(".tempo-slider");
@@ -105,6 +108,18 @@ class DrumKit {
 		} else {
 			this.playBtn.innerText = "Play";
 			this.playBtn.classList.remove("active");
+		}
+	}
+
+	showOptions() {
+		if (!this.isShowing) {
+			this.optionBtn.innerText = "Hide options";
+			this.selectBtn.classList.add("show");
+			this.isShowing = true;
+		} else {
+			this.optionBtn.innerText = "Show options";
+			this.selectBtn.classList.remove("show");
+			this.isShowing = false;
 		}
 	}
 
@@ -256,6 +271,10 @@ drumKit.pads.forEach((pad) => {
 drumKit.playBtn.addEventListener("click", function () {
 	drumKit.updateBtn();
 	drumKit.start();
+});
+
+drumKit.optionBtn.addEventListener("click", function () {
+	drumKit.showOptions();
 });
 
 drumKit.selects.forEach((select) => {
